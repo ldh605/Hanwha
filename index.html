@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="한화오션 프로 신입 포트폴리오" />
+  <title>한화오션 프로 신입 포트폴리오</title>
+  <style>
+    :root { --ink:#141414; --ink-soft:#262626; --muted:#707070; --faint:#adadad; --paper:#fff; --soft:#f3f3f3; --field:#f0f0f0; --line:#e0e0e0; --line-soft:#f0f0f0; --blue:#0066ff; --r-sm:16px; --r-md:24px; --pill:999px; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--paper); font-family:Inter, Pretendard, "Apple SD Gothic Neo", "Noto Sans KR", Arial, sans-serif; font-weight:450; line-height:1.45; }
+    a { color:inherit; text-decoration:none; }
+    .wrap { width:min(1120px, calc(100% - 48px)); margin:0 auto; }
+    .nav { position:sticky; z-index:5; top:16px; display:flex; align-items:center; justify-content:space-between; gap:24px; width:min(720px, calc(100% - 32px)); margin:16px auto 0; padding:8px 8px 8px 18px; background:rgba(243,243,243,.92); backdrop-filter:blur(12px); border-radius:var(--pill); }
+    .brand { font-size:14px; font-weight:700; white-space:nowrap; }
+    .nav-links { display:flex; align-items:center; gap:20px; font-size:14px; font-weight:600; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; min-height:46px; padding:0 20px; border:1px solid transparent; border-radius:var(--pill); font-size:15px; font-weight:650; transition:transform .2s, background .2s; }
+    .btn:hover { transform:translateY(-2px); }
+    .btn-dark { background:var(--ink); color:#fff; }
+    .btn-light { background:var(--paper); border-color:var(--line); }
+    .eyebrow { display:inline-flex; align-items:center; gap:8px; margin:0 0 20px; color:var(--muted); font-size:13px; font-weight:650; }
+    .eyebrow::before { width:8px; height:8px; border-radius:50%; background:var(--blue); content:""; }
+    .hero { min-height:680px; display:grid; grid-template-columns:1.1fr .9fr; align-items:center; gap:64px; padding:108px 0 96px; }
+    h1,h2,h3,p { margin-top:0; }
+    h1 { max-width:700px; margin-bottom:28px; font-size:clamp(48px, 7vw, 80px); font-weight:700; letter-spacing:-.065em; line-height:1; }
+    h2 { margin-bottom:18px; font-size:clamp(34px, 4vw, 52px); font-weight:700; letter-spacing:-.055em; line-height:1.1; }
+    h3 { margin-bottom:10px; font-size:22px; font-weight:700; letter-spacing:-.04em; line-height:1.25; }
+    .lead { max-width:530px; margin-bottom:32px; color:var(--muted); font-size:20px; font-weight:350; line-height:1.5; word-break:keep-all; }
+    .actions { display:flex; flex-wrap:wrap; gap:10px; }
+    .hero-art { min-height:420px; padding:24px; overflow:hidden; background:var(--soft); border-radius:var(--r-md); }
+    .ship-card { position:relative; height:372px; overflow:hidden; border-radius:20px; background:var(--ink); color:#fff; }
+    .ship-card::before { position:absolute; inset:auto -18% -11% -9%; height:55%; background:#343434; border-radius:60% 60% 0 0; transform:rotate(-7deg); content:""; }
+    .ship-card::after { position:absolute; top:74px; right:42px; width:114px; height:114px; border:1px solid #6c6c6c; border-radius:30%; content:""; }
+    .art-label { position:absolute; z-index:1; top:28px; left:28px; color:#fff; font-size:13px; font-weight:650; }
+    .art-number { position:absolute; z-index:1; right:28px; bottom:20px; font-size:70px; font-weight:700; letter-spacing:-.08em; line-height:1; }
+    section { padding:100px 0; }
+    .section-head { display:flex; justify-content:space-between; align-items:end; gap:24px; margin-bottom:36px; }
+    .section-copy { max-width:405px; margin:0; color:var(--muted); font-size:16px; word-break:keep-all; }
+    .strengths { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .strength { min-height:260px; padding:28px; border:1px solid var(--line-soft); border-radius:var(--r-md); display:flex; flex-direction:column; justify-content:space-between; }
+    .strength:nth-child(2) { background:var(--soft); border-color:transparent; }
+    .index { color:var(--faint); font-size:13px; font-weight:650; }
+    .strength p, .project-desc { margin:0; color:var(--muted); font-size:15px; word-break:keep-all; }
+    .projects { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .project { overflow:hidden; border:1px solid var(--line-soft); border-radius:var(--r-md); }
+    .project-visual { position:relative; height:198px; padding:20px; background:var(--soft); }
+    .project:nth-child(2) .project-visual { background:#e7e7e7; }
+    .project:nth-child(3) .project-visual { background:#dedede; }
+    .project-symbol { position:absolute; right:20px; bottom:18px; font-size:72px; font-weight:700; letter-spacing:-.12em; line-height:1; }
+    .tag { display:inline-block; padding:7px 10px; border-radius:var(--pill); background:#fff; font-size:12px; font-weight:650; }
+    .project-body { padding:24px; }
+    .project-desc { margin-bottom:22px; }
+    .facts { display:grid; gap:11px; margin:0; padding:0; list-style:none; }
+    .facts li { display:grid; grid-template-columns:48px 1fr; gap:8px; color:var(--ink-soft); font-size:13px; line-height:1.45; word-break:keep-all; }
+    .facts b { color:var(--muted); font-size:12px; font-weight:650; }
+    .timeline { display:grid; grid-template-columns:.8fr 1.2fr; gap:64px; padding:54px; background:var(--soft); border-radius:var(--r-md); }
+    .timeline-intro p { max-width:340px; color:var(--muted); word-break:keep-all; }
+    .timeline-list { border-top:1px solid var(--line); }
+    .time-item { display:grid; grid-template-columns:106px 1fr; gap:16px; padding:20px 0; border-bottom:1px solid var(--line); }
+    .year { color:var(--muted); font-size:13px; font-weight:650; }
+    .time-item p { margin:4px 0 0; color:var(--muted); font-size:14px; word-break:keep-all; }
+    .cta { padding:0 0 100px; }
+    .cta-box { display:flex; justify-content:space-between; align-items:end; gap:24px; padding:52px; background:var(--ink); color:#fff; border-radius:var(--r-md); }
+    .cta-box h2 { max-width:610px; margin-bottom:0; }
+    .cta-box .btn { flex:none; background:#fff; color:var(--ink); }
+    footer { padding:44px 0 28px; color:var(--faint); font-size:13px; }
+    footer .wrap { display:flex; justify-content:space-between; gap:16px; border-top:1px solid var(--line-soft); padding-top:24px; }
+    @media (max-width:800px) { .hero { grid-template-columns:1fr; gap:32px; min-height:auto; padding:76px 0 72px; } .hero-art { min-height:330px; } .ship-card { height:282px; } .strengths, .projects { grid-template-columns:1fr; } .strength { min-height:190px; } .timeline { grid-template-columns:1fr; gap:28px; padding:32px 24px; } .cta-box { align-items:flex-start; flex-direction:column; padding:34px 24px; } section { padding:72px 0; } }
+    @media (max-width:560px) { .wrap { width:min(100% - 32px, 1120px); } .nav { top:8px; margin-top:8px; padding-left:15px; } .nav-links a:not(.btn) { display:none; } h1 { font-size:49px; } .lead { font-size:18px; } .section-head { display:block; margin-bottom:28px; } .section-copy { margin-top:12px; } .time-item { grid-template-columns:82px 1fr; gap:10px; } footer .wrap { flex-direction:column; } }
+  </style>
+</head>
+<body>
+  <nav class="nav" aria-label="주요 메뉴">
+    <a class="brand" href="#top">HANWHA OCEAN / PRO</a>
+    <div class="nav-links"><a href="#strength">강점</a><a href="#projects">프로젝트</a><a href="#growth">성장</a><a class="btn btn-dark" href="#contact">연락하기</a></div>
+  </nav>
+  <main id="top">
+    <div class="wrap hero">
+      <div>
+        <p class="eyebrow">2026 PRO NEWCOMER PORTFOLIO</p>
+        <h1>현장의 문제를<br>끝까지 해결하는<br>신입입니다.</h1>
+        <p class="lead">조선·해양 산업의 복잡한 흐름을 이해하고, 데이터와 협업으로 더 안전하고 효율적인 일의 방식을 설계합니다.</p>
+        <div class="actions"><a class="btn btn-dark" href="#projects">프로젝트 보기</a><a class="btn btn-light" href="#contact">함께 이야기하기</a></div>
+      </div>
+      <aside class="hero-art" aria-label="프로필 그래픽">
+        <div class="ship-card"><span class="art-label">SYSTEM THINKER<br>TEAM PLAYER</span><span class="art-number">01</span></div>
+      </aside>
+    </div>
+
+    <section id="strength"><div class="wrap">
+      <div class="section-head"><div><p class="eyebrow">MY STRENGTHS</p><h2>일을 앞으로<br>움직이는 세 가지 힘.</h2></div><p class="section-copy">배우는 속도와 실행의 밀도를 높여, 팀의 목표가 실제 결과로 이어지도록 돕습니다.</p></div>
+      <div class="strengths">
+        <article class="strength"><span class="index">01 / DATA</span><div><h3>복잡함을 구조화합니다.</h3><p>흩어진 현장 정보를 기준과 흐름으로 정리해, 누구나 바로 판단할 수 있는 화면과 문서를 만듭니다.</p></div></article>
+        <article class="strength"><span class="index">02 / COLLABORATION</span><div><h3>다른 언어를 연결합니다.</h3><p>기술, 생산, 사용자 관점을 한 테이블에 올려 실행 가능한 합의점을 빠르게 찾습니다.</p></div></article>
+        <article class="strength"><span class="index">03 / OWNERSHIP</span><div><h3>끝까지 확인합니다.</h3><p>아이디어에서 멈추지 않고, 현장 적용 뒤의 작은 불편까지 관찰하며 다음 개선으로 이어갑니다.</p></div></article>
+      </div>
+    </div></section>
+
+    <section id="projects"><div class="wrap">
+      <div class="section-head"><div><p class="eyebrow">SELECTED PROJECTS</p><h2>문제를 발견하고,<br>작게 증명했습니다.</h2></div><p class="section-copy">학습과 협업으로 완성한 가상의 포트폴리오 사례입니다. 역할·과정·결과를 짧고 명확하게 기록했습니다.</p></div>
+      <div class="projects">
+        <article class="project"><div class="project-visual"><span class="tag">운항 데이터</span><span class="project-symbol">A1</span></div><div class="project-body"><h3>연료 사용 대시보드</h3><p class="project-desc">운항 데이터가 여러 파일에 분산되어, 일일 판단에 시간이 걸리던 문제를 다뤘습니다.</p><ul class="facts"><li><b>역할</b><span>리서치·화면 설계</span></li><li><b>해결</b><span>핵심 지표 5개를 한 화면으로 통합</span></li><li><b>성과</b><span>보고 준비 시간 30% 단축 가정</span></li></ul></div></article>
+        <article class="project"><div class="project-visual"><span class="tag">안전 점검</span><span class="project-symbol">B2</span></div><div class="project-body"><h3>현장 점검 플로우</h3><p class="project-desc">종이 체크리스트에서 누락되던 점검 이력을 모바일 흐름으로 다시 설계했습니다.</p><ul class="facts"><li><b>역할</b><span>사용자 인터뷰·프로토타입</span></li><li><b>해결</b><span>사진·위치 기반 체크 단계 구성</span></li><li><b>성과</b><span>누락 항목 20% 감소 가정</span></li></ul></div></article>
+        <article class="project"><div class="project-visual"><span class="tag">협업 운영</span><span class="project-symbol">C3</span></div><div class="project-body"><h3>인수인계 보드</h3><p class="project-desc">교대 근무 사이에 사라지는 맥락을 하나의 기록 방식으로 연결했습니다.</p><ul class="facts"><li><b>역할</b><span>정보 구조·운영 가이드</span></li><li><b>해결</b><span>우선순위와 담당자를 즉시 공유</span></li><li><b>성과</b><span>인계 확인률 95% 달성 가정</span></li></ul></div></article>
+      </div>
+    </div></section>
+
+    <section id="growth"><div class="wrap timeline">
+      <div class="timeline-intro"><p class="eyebrow">GROWTH TIMELINE</p><h2>배움은<br>매번 현장으로.</h2><p>지식은 적용할 때 비로소 내 것이 된다고 믿습니다. 작은 실험을 반복하며 일의 감각을 넓혀 왔습니다.</p></div>
+      <div class="timeline-list">
+        <article class="time-item"><span class="year">2023.03</span><div><h3>산업공학 전공 프로젝트</h3><p>생산 시스템의 병목을 데이터로 찾아보며 문제 정의의 기초를 익혔습니다.</p></div></article>
+        <article class="time-item"><span class="year">2024.07</span><div><h3>스마트 제조 실습</h3><p>센서 데이터와 작업 흐름을 연결해 개선안을 제안했습니다.</p></div></article>
+        <article class="time-item"><span class="year">2025.02</span><div><h3>팀 기반 서비스 개선</h3><p>다양한 전공의 동료들과 사용자 관점에서 프로토타입을 검증했습니다.</p></div></article>
+        <article class="time-item"><span class="year">NOW</span><div><h3>한화오션과 더 큰 항해</h3><p>현장의 안전과 효율을 높이는 동료로 성장하고 있습니다.</p></div></article>
+      </div>
+    </section></div>
+
+    <section class="cta" id="contact"><div class="wrap"><div class="cta-box"><div><p class="eyebrow" style="color:#adadad">LET'S CONNECT</p><h2>다음 문제를<br>함께 풀어 보고 싶습니다.</h2></div><a class="btn" href="mailto:hello.portfolio@example.com">hello.portfolio@example.com</a></div></div></section>
+  </main>
+  <footer><div class="wrap"><span>한화오션 프로 신입 포트폴리오</span><span>© 2026 Portfolio. Fictional sample content.</span></div></footer>
+</body>
+</html>
